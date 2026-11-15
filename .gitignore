@@ -20,3 +20,6 @@ find_*.js
 *.log
 .DS_Store
 Thumbs.db
+
+index_tilda_backup.html
+build_aesthetic_masterpiece.py
