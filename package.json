@@ -1,0 +1,13 @@
+{
+  "name": "srinithi-vishu-wedding-invitation",
+  "version": "1.0.0",
+  "description": "Srinithi & Vishu Karthick – The Sacred Garden Wedding Invitation",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": ["wedding", "invitation", "the-sacred-garden"],
+  "author": "Antigravity",
+  "license": "ISC"
+}

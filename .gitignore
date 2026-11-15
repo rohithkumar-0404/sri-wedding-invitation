@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Python scripts and temp files
+*.py
+*.pyc
+__pycache__/
+scratch/
+scratch_*/
+
+# Temp inspection HTMLs & helper JS
+reference_page.html
+replica_test.html
+check_*.js
+find_*.js
+*.mp3
+!assets/audio/wedding_music.mp3
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
