@@ -15,6 +15,9 @@ check_*.js
 find_*.js
 *.mp3
 !assets/audio/wedding_music.mp3
+!public/assets/audio/wedding_music.mp3
+!public/audio/wedding_music.mp3
+!audio/wedding_music.mp3
 
 # Logs and OS files
 *.log
