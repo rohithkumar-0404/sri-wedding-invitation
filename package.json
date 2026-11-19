@@ -4,6 +4,7 @@
   "description": "Srinithi & Vishu Karthick – The Sacred Garden Wedding Invitation",
   "main": "server.js",
   "scripts": {
+    "build": "echo Static site ready",
     "dev": "node server.js",
     "start": "node server.js"
   },
