@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Srinithi & Vishu Karthick — South Indian Wedding Invitation</title>
+  <meta name="description" content="Wedding Invitation of Srinithi K & Vishu Karthick P | 12 & 13 December 2026 | Poovayammal Thirumana Mandapam, Rasipuram" />
+  <link rel="icon" href="assets/images/vs_monogram.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. Design Tokens & CSS Variables
+       ========================================================================== */
+    :root {
+      --bg-parchment: #F4E4D4;
+      --bg-blush: #EBC7B7;
+      --accent-maroon: #6B1D1D;
+      --text-primary: #4A2B21;
+      --text-muted: #7A5648;
+      --accent-gold: #C6923A;
+      --accent-gold-light: #E7C97F;
+      --accent-green: #2D5029;
+      --accent-marigold: #E8822A;
+      --font-script: 'Great Vibes', cursive;
+      --font-serif-regal: 'Cinzel', Georgia, serif;
+      --font-serif-body: 'Cormorant Garamond', Garamond, Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #2A1812;
+    }
+
+    body {
+      background-color: #2A1812;
+      color: var(--text-primary);
+      font-family: var(--font-serif-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body.envelope-locked {
+      overflow: hidden !important;
+      height: 100vh !important;
+    }
+
+    /* Core Container: Max 480px on desktop, 100vw on mobile */
+    .invitation-frame {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      background-color: var(--bg-parchment);
+      position: relative;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.55), 0 0 100px rgba(42, 24, 18, 0.4);
+      overflow-x: hidden;
+      margin: 0 auto;
+    }
+
+    /* Seamless Section Blends */
+    .blend-gradient-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: linear-gradient(to bottom, var(--bg-parchment) 0%, transparent 100%);
+      pointer-events-none;
+      z-index: 4;
+    }
+
+    .blend-gradient-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: linear-gradient(to top, var(--bg-parchment) 0%, transparent 100%);
+      pointer-events-none;
+      z-index: 4;
+    }
+
+    /* Floating Petals Canvas / Layer */
+    .ambient-petals-wrap {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      height: 100%;
+      pointer-events-none !important;
+      z-index: 0 !important;
+      overflow: hidden;
+      opacity: 0.35 !important;
+    }
+
+    .floating-petal {
+      position: absolute;
+      top: -30px;
+      will-change: transform, opacity;
+      animation: petalFall linear infinite;
+    }
+
+    @keyframes petalFall {
+      0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.85;
+      }
+      90% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(105vh) rotate(540deg) translateX(60px);
+        opacity: 0;
+      }
+    }
+
+    /* ==========================================================================
+       Section 0: Interactive Envelope Splash Screen (Full Artwork Front-Page)
+       ========================================================================== */
+    .envelope-gate-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #2A1812;
+      background-image: radial-gradient(circle at center, #3D1C13 0%, #1D0B08 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .envelope-gate-overlay.opening {
+      opacity: 0;
+      transform: scale(1.12);
+      pointer-events: none;
+    }
+
+    .envelope-front-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      height: 100dvh;
+      max-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.75);
+      overflow: hidden;
+      background-color: #F4E4D4;
+    }
+
+    .envelope-front-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* Interactive Wax Seal Circular Hotspot Button */
+    .wax-seal-hotspot {
+      position: absolute;
+      top: 53.2%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      z-index: 20;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.25s ease;
+    }
+
+    /* Soft, subtle golden ambient pulse glow around the painted seal */
+    .wax-seal-hotspot::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(198, 146, 58, 0.45);
+      box-shadow: 
+        0 0 20px rgba(198, 146, 58, 0.5),
+        inset 0 0 15px rgba(198, 146, 58, 0.25);
+      animation: sealPulseGlow 2.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* Expanding subtle ripple ring */
+    .wax-seal-hotspot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(198, 146, 58, 0.6);
+      animation: sealRipple 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sealPulseGlow {
+      0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.98);
+        box-shadow: 0 0 15px rgba(198, 146, 58, 0.35);
+      }
+      50% {
+        opacity: 0.95;
+        transform: scale(1.04);
+        box-shadow: 0 0 28px rgba(198, 146, 58, 0.75), 0 0 45px rgba(232, 130, 42, 0.4);
+      }
+    }
+
+    @keyframes sealRipple {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.75;
+      }
+      60% {
+        transform: scale(1.22);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.25);
+        opacity: 0;
+      }
+    }
+
+    .wax-seal-hotspot:hover {
+      transform: translate(-50%, -50%) scale(1.04);
+    }
+
+    .wax-seal-hotspot:active {
+      transform: translate(-50%, -50%) scale(0.96);
+    }
+
+    /* ==========================================================================
+       Section 1: Hero Section
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      background: linear-gradient(180deg, #F3DECB 0%, var(--bg-parchment) 100%);
+      padding-bottom: 48px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-painting-container {
+      width: 100%;
+      height: 48vh;
+      min-height: 360px;
+      max-height: 480px;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .hero-painting-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .hero-painting-mask {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 58%, var(--bg-parchment) 100%);
+      pointer-events-none;
+    }
+
+    .hero-typography {
+      padding: 0 24px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-head-1 {
+      font-family: var(--font-serif-regal);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent-maroon);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .hero-head-2 {
+      font-family: var(--font-serif-regal);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .gold-divider-lotus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 14px auto 18px;
+      max-width: 320px;
+    }
+
+    .gold-hairline-tapered {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #C6923A);
+      border-radius: 2px;
+    }
+
+    .gold-hairline-tapered.right {
+      background: linear-gradient(to left, transparent, #C6923A);
+    }
+
+    .ornate-lotus-wrap {
+      width: 44px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lotus-ornate-svg {
+      width: 40px;
+      height: 30px;
+      filter: drop-shadow(0 2px 4px rgba(107, 29, 29, 0.2));
+    }
+
+    .lotus-icon-maroon {
+      width: 24px;
+      height: 24px;
+      fill: var(--accent-maroon);
+    }
+
+    .hero-intro-msg {
+      font-family: var(--font-serif-regal);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      line-height: 1.7;
+      max-width: 380px;
+      margin: 0 auto 20px;
+    }
+
+    .couple-display-names {
+      margin: 8px 0 24px;
+    }
+
+    .name-bride, .name-groom {
+      font-family: var(--font-script);
+      font-size: 50px;
+      color: var(--text-primary);
+      line-height: 1.15;
+      display: block;
+      text-shadow: 0 1px 2px rgba(107, 29, 29, 0.08);
+    }
+
+    .amp-spacing {
+      display: inline-block;
+      margin: 0 14px;
+      color: var(--accent-gold);
+      font-weight: 400;
+      vertical-align: middle;
+    }
+
+    .ampersand-sign {
+      font-family: var(--font-script);
+      font-size: 34px;
+      color: var(--accent-gold);
+      display: inline-block;
+      margin: 2px 14px;
+      padding: 0 8px;
+    }
+
+    .framed-date-lockup {
+      display: inline-block;
+      padding: 12px 28px;
+      border-top: 1px solid rgba(198, 146, 58, 0.45);
+      border-bottom: 1px solid rgba(198, 146, 58, 0.45);
+      margin: 8px auto 20px;
+    }
+
+    .date-text {
+      font-family: var(--font-serif-regal);
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent-maroon);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .place-text {
+      font-family: var(--font-serif-body);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      display: block;
+    }
+
+    /* Live Countdown Grid */
+    .countdown-wrapper {
+      margin: 20px auto 0;
+      max-width: 360px;
+      padding: 16px 12px;
+      background: rgba(255, 253, 249, 0.75);
+      border: 1px solid rgba(198, 146, 58, 0.35);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(74, 43, 33, 0.05);
+    }
+
+    .countdown-title {
+      font-family: var(--font-serif-regal);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-maroon);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .countdown-box {
+      min-width: 58px;
+      padding: 8px 6px;
+      background: #FFFFFF;
+      border: 1px solid rgba(198, 146, 58, 0.3);
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .count-num {
+      font-family: var(--font-serif-regal);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--accent-maroon);
+      display: block;
+      line-height: 1;
+    }
+
+    .count-unit {
+      font-family: var(--font-sans);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .calendar-cta-btn {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-maroon);
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(198, 146, 58, 0.15);
+    }
+
+    .calendar-cta-btn:hover {
+      background: var(--accent-maroon);
+      color: #FFFFFF;
+      border-color: var(--accent-maroon);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       Section 2: Parents' Blessings & Formal Invitation
+       ========================================================================== */
+    .parents-section {
+      position: relative;
+      background-color: var(--bg-parchment);
+      padding: 60px 24px 70px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .banana-leaf-decor-left {
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 90px;
+      height: 280px;
+      opacity: 0.85;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .banana-leaf-decor-right {
+      position: absolute;
+      top: 20px;
+      right: -20px;
+      width: 90px;
+      height: 280px;
+      opacity: 0.85;
+      pointer-events: none;
+      z-index: 1;
+      transform: scaleX(-1);
+    }
+
+    .parents-content-column {
+      position: relative;
+      z-index: 3;
+      max-width: 390px;
+      margin: 0 auto;
+    }
+
+    .ganesha-motif {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      fill: var(--accent-gold);
+    }
+
+    .parents-header-title {
+      font-family: var(--font-serif-regal);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent-maroon);
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .family-card {
+      margin-bottom: 22px;
+    }
+
+    .parents-names {
+      font-family: var(--font-serif-body);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .family-place {
+      font-family: var(--font-serif-body);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .formal-invite-text {
+      font-family: var(--font-serif-body);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin: 28px auto 14px;
+      max-width: 340px;
+      font-style: italic;
+    }
+
+    .formal-script-names {
+      font-family: var(--font-script);
+      font-size: 42px;
+      color: var(--accent-maroon);
+      line-height: 1.15;
+      margin-top: 10px;
+    }
+
+
+
+    /* ==========================================================================
+       Section 3: Main Wedding Ceremony & Mandapam
+       ========================================================================== */
+    .ceremony-section {
+      position: relative;
+      background: linear-gradient(180deg, var(--bg-blush) 0%, #F5AE82 45%, var(--bg-parchment) 100%);
+      padding: 70px 24px 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .ceremony-mandapam-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      pointer-events: none;
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: multiply;
+    }
+
+    .ceremony-content {
+      position: relative;
+      z-index: 5;
+    }
+
+    .ceremony-title {
+      font-family: var(--font-script);
+      font-size: 58px;
+      color: var(--accent-maroon);
+      line-height: 1.1;
+      margin: 10px 0 16px;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+    }
+
+    .ceremony-datetime-pill {
+      display: inline-block;
+      padding: 10px 22px;
+      background: rgba(255, 253, 249, 0.9);
+      border: 1px solid rgba(198, 146, 58, 0.4);
+      border-radius: 30px;
+      font-family: var(--font-serif-regal);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--accent-maroon);
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      margin-bottom: 24px;
+    }
+
+    .ceremony-venue-block {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .venue-name-highlight {
+      font-family: var(--font-serif-regal);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-maroon);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .venue-address-line {
+      font-family: var(--font-serif-body);
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       Section 4: Wedding Celebrations Timeline
+       ========================================================================== */
+    .timeline-section {
+      position: relative;
+      background-color: var(--bg-parchment);
+      padding: 60px 20px 70px;
+      overflow: hidden;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .timeline-pre-title {
+      font-family: var(--font-serif-body);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--accent-gold);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .timeline-script-title {
+      font-family: var(--font-script);
+      font-size: 46px;
+      color: var(--accent-maroon);
+      line-height: 1.15;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .timeline-uppercase-subtitle {
+      font-family: var(--font-serif-regal);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Day Sub-Header Pill */
+    .day-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #6B1D1D 0%, #852626 100%);
+      color: #FFF2E2;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-family: var(--font-serif-regal);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(107, 29, 29, 0.25);
+      margin: 22px 0 16px;
+      border: 1px solid var(--accent-gold);
+    }
+
+    .timeline-events-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    /* Vertical Timeline Connector Line */
+    .timeline-events-stack::before {
+      content: "";
+      position: absolute;
+      top: 24px;
+      bottom: 24px;
+      left: 32px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent-gold), rgba(198, 146, 58, 0.25));
+      z-index: 1;
+    }
+
+    /* Event Card (Row: 64px icon left + typography right) */
+    .event-card-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 253, 249, 0.9);
+      border: 1px solid rgba(198, 146, 58, 0.32);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 14px rgba(74, 43, 33, 0.04);
+      position: relative;
+      z-index: 2;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .event-card-row:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(107, 29, 29, 0.08);
+      border-color: rgba(198, 146, 58, 0.6);
+    }
+
+    .event-icon-circle {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #FFFDF9 0%, #F5EAE0 100%);
+      border: 1.5px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .event-icon-svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .event-meta-info {
+      flex: 1;
+    }
+
+    .event-name {
+      font-family: var(--font-serif-regal);
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--accent-maroon);
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .event-time-badge {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-marigold);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .event-description {
+      font-family: var(--font-serif-body);
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       Section 5: Venue Spotlight & Interactive Location CTA
+       ========================================================================== */
+    .venue-section {
+      position: relative;
+      background-color: var(--bg-parchment);
+      padding: 60px 24px 65px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .venue-arch-frame {
+      border: 1px solid rgba(198, 146, 58, 0.4);
+      border-radius: 18px;
+      padding: 24px 18px 28px;
+      background: #FFFDF9;
+      box-shadow: 0 8px 30px rgba(74, 43, 33, 0.06);
+      position: relative;
+    }
+
+    .venue-illustration-wrap {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid rgba(198, 146, 58, 0.3);
+      position: relative;
+      background: #200B0A;
+    }
+
+    .venue-image-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .venue-illustration-wrap:hover .venue-image-photo {
+      transform: scale(1.04);
+    }
+
+    .venue-title-sub {
+      font-family: var(--font-serif-regal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .venue-display-title {
+      font-family: var(--font-serif-regal);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--accent-maroon);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .venue-full-address {
+      font-family: var(--font-serif-body);
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .venue-poetic-desc {
+      font-family: var(--font-serif-body);
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.6;
+      max-width: 360px;
+      margin: 0 auto 24px;
+    }
+
+    /* Interactive Location CTA Pill Button */
+    .maps-cta-pill {
+      position: relative !important;
+      z-index: 30 !important;
+      pointer-events: auto !important;
+      cursor: pointer !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--accent-maroon);
+      color: var(--bg-parchment);
+      padding: 14px 30px;
+      border-radius: 9999px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(107, 29, 29, 0.35);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .maps-cta-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(107, 29, 29, 0.5), 0 0 15px rgba(198, 146, 58, 0.4);
+      background-color: #7E2222;
+      color: #FFFFFF;
+    }
+
+    .maps-cta-pill .chevron-icon {
+      transition: transform 0.25s ease;
+    }
+
+    .maps-cta-pill:hover .chevron-icon {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       Section 6: Couple Moments / Candid Story
+       ========================================================================== */
+    .gallery-section {
+      position: relative;
+      background-color: var(--bg-parchment);
+      padding: 50px 24px 60px;
+      text-align: center;
+    }
+
+    .gallery-header-script {
+      font-family: var(--font-script);
+      font-size: 42px;
+      color: var(--accent-maroon);
+      margin-bottom: 24px;
+    }
+
+    .candid-frame-container {
+      background: #FFFFFF;
+      padding: 12px 12px 18px;
+      border: 1px solid rgba(198, 146, 58, 0.35);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(74, 43, 33, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .candid-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .candid-caption {
+      font-family: var(--font-serif-body);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-top: 12px;
+      line-height: 1.45;
+    }
+
+    .candid-signoff {
+      font-family: var(--font-script);
+      font-size: 26px;
+      color: var(--accent-gold);
+      margin-top: 4px;
+    }
+
+    .couple-portrait-frame {
+      border: 3px double var(--accent-gold);
+      border-radius: 16px;
+      padding: 6px;
+      background: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .couple-portrait-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* ==========================================================================
+       Section 7: Closing Blessings & Signature
+       ========================================================================== */
+    .closing-section {
+      position: relative;
+      background: linear-gradient(180deg, var(--bg-parchment) 0%, #EFE1D2 100%);
+      padding: 60px 24px 80px;
+      text-align: center;
+    }
+
+    .closing-blessing-text {
+      font-family: var(--font-serif-body);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text-primary);
+      max-width: 360px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .closing-monogram {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(107, 29, 29, 0.15));
+    }
+
+    .closing-names {
+      font-family: var(--font-script);
+      font-size: 38px;
+      color: var(--accent-maroon);
+      margin-bottom: 8px;
+    }
+
+    .closing-footer-pill {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(198, 146, 58, 0.3);
+    }
+
+    /* ==========================================================================
+       Floating Audio Control Button
+       ========================================================================== */
+    .floating-music-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 100;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #8B2525 0%, #6B1D1D 70%, #461111 100%);
+      border: 1.5px solid var(--accent-gold);
+      color: var(--accent-gold);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+
+    .floating-music-btn.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .floating-music-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(198, 146, 58, 0.5);
+    }
+
+    .floating-music-btn.playing {
+      animation: musicPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(198, 146, 58, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(198, 146, 58, 0.85);
+      }
+    }
+
+    /* Reveal Animation Class (IntersectionObserver) */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="envelope-locked">
+
+  <!-- Background Music Audio Tag -->
+  <audio id="weddingBgm" loop preload="auto">
+    <source src="assets/audio/wedding_music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Ambient Floating Petals -->
+  <div class="ambient-petals-wrap" id="petalsWrap"></div>
+
+  <!-- ========================================================================
+       SECTION 0: Interactive Envelope Splash Screen (Full Artwork Front-Page)
+       ======================================================================== -->
+  <div class="envelope-gate-overlay" id="envelopeGate" onclick="openEnvelope()" ontouchend="openEnvelope()">
+    <div class="envelope-front-wrap" id="envelopeFrontWrap">
+      <!-- Full-bleed Edge-to-Edge Artwork Front Page -->
+      <img 
+        src="/images/envelope-front.png" 
+        alt="Srinithi & Vishu Karthick Wedding Invitation" 
+        class="envelope-front-img" 
+        id="envelopeFrontImg" 
+      />
+
+      <!-- Circular Interactive Wax Seal Hotspot Button -->
+      <button 
+        class="wax-seal-hotspot" 
+        id="waxSealBtn" 
+        aria-label="Tap the seal to open invitation"
+        type="button"
+        onclick="event.stopPropagation(); openEnvelope();"
+        ontouchend="event.stopPropagation(); openEnvelope();"
+      ></button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN INVITATION FRAME (Max 480px)
+       ======================================================================== -->
+  <main class="invitation-frame" id="mainInvitation">
+
+    <!-- ======================================================================
+         SECTION 1: Hero Section
+         ====================================================================== -->
+    <section class="hero-section" id="heroSection">
+      <!-- Full-bleed Edge-to-edge Painting Header Image -->
+      <div class="hero-painting-container">
+        <img src="/images/hero-feet.jpg" alt="South Indian Bride & Groom Wedding" class="hero-painting-img" />
+        <div class="hero-painting-mask"></div>
+      </div>
+
+      <div class="hero-typography">
+        <h2 class="hero-head-1 reveal-on-scroll">TWO FAMILIES UNITE</h2>
+        <h3 class="hero-head-2 reveal-on-scroll">A JOURNEY OF GRACE & JOY</h3>
+
+        <div class="gold-divider-lotus reveal-on-scroll">
+          <div class="gold-hairline-tapered"></div>
+          <div class="ornate-lotus-wrap">
+            <svg class="lotus-ornate-svg" viewBox="0 0 48 36" fill="none">
+              <!-- Central Lotus Blossom with Maroon & Gold -->
+              <path d="M24 2 C25 10, 29 18, 36 22 C30 26, 26 28, 24 34 C22 28, 18 26, 12 22 C19 18, 23 10, 24 2 Z" fill="#6B1D1D"/>
+              <path d="M24 10 C27 16, 33 21, 42 22 C35 28, 29 30, 24 34 C19 30, 13 28, 6 22 C15 21, 21 16, 24 10 Z" fill="#C6923A" opacity="0.9"/>
+              <path d="M24 18 C26 22, 30 25, 38 26 C33 30, 28 32, 24 34 C20 32, 15 30, 10 26 C18 25, 22 22, 24 18 Z" fill="#E8822A" opacity="0.85"/>
+              <circle cx="24" cy="32" r="2.5" fill="#C6923A"/>
+              <circle cx="16" cy="27" r="1.5" fill="#C6923A"/>
+              <circle cx="32" cy="27" r="1.5" fill="#C6923A"/>
+            </svg>
+          </div>
+          <div class="gold-hairline-tapered right"></div>
+        </div>
+
+        <p class="hero-intro-msg reveal-on-scroll">
+          Together with their families, joyfully invite you to celebrate the wedding of
+        </p>
+
+        <div class="couple-display-names reveal-on-scroll">
+          <span class="name-bride">Srinithi K</span>
+          <span class="ampersand-sign">&</span>
+          <span class="name-groom">Vishu Karthick P</span>
+        </div>
+
+        <div class="framed-date-lockup reveal-on-scroll">
+          <span class="date-text">12 & 13 December 2026</span>
+          <span class="place-text">Rasipuram, Tamil Nadu</span>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-wrapper reveal-on-scroll">
+          <div class="countdown-title">Counting Down to Shubha Muhurtham</div>
+          <div class="countdown-grid">
+            <div class="countdown-box">
+              <span class="count-num" id="cdDays">00</span>
+              <span class="count-unit">Days</span>
+            </div>
+            <div class="countdown-box">
+              <span class="count-num" id="cdHours">00</span>
+              <span class="count-unit">Hours</span>
+            </div>
+            <div class="countdown-box">
+              <span class="count-num" id="cdMins">00</span>
+              <span class="count-unit">Mins</span>
+            </div>
+            <div class="countdown-box">
+              <span class="count-num" id="cdSecs">00</span>
+              <span class="count-unit">Secs</span>
+            </div>
+          </div>
+
+          <a href="#" class="calendar-cta-btn" id="addToCalBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Add to Calendar
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: Parents' Blessings & Formal Invitation
+         ====================================================================== -->
+    <section class="parents-section" id="parentsSection">
+      <!-- Banana Leaves Decor (SVG) -->
+      <svg class="banana-leaf-decor-left" viewBox="0 0 100 300" fill="none">
+        <path d="M10 20 Q70 80 40 180 Q10 240 5 290 Q40 220 80 150 Q100 80 10 20 Z" fill="#2D5029" opacity="0.35"/>
+        <path d="M25 60 Q65 110 45 170 Q25 210 20 250" stroke="#C6923A" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <svg class="banana-leaf-decor-right" viewBox="0 0 100 300" fill="none">
+        <path d="M10 20 Q70 80 40 180 Q10 240 5 290 Q40 220 80 150 Q100 80 10 20 Z" fill="#2D5029" opacity="0.35"/>
+        <path d="M25 60 Q65 110 45 170 Q25 210 20 250" stroke="#C6923A" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+
+      <div class="parents-content-column">
+        <!-- Line-art Ganesha SVG -->
+        <svg class="ganesha-motif reveal-on-scroll" viewBox="0 0 100 100" fill="none" stroke="#C6923A" stroke-width="2">
+          <!-- Stylized Traditional Lord Ganesha Line-art -->
+          <path d="M50 15 Q52 10 50 5 Q48 10 50 15 Z" fill="#C6923A"/>
+          <path d="M35 25 Q50 18 65 25 Q75 35 68 50 Q60 65 52 75 Q48 82 40 80 Q35 78 37 70 Q42 62 48 58 Q55 54 52 42 Q50 32 35 32"/>
+          <path d="M68 35 Q85 35 85 52 Q85 68 68 70"/>
+          <path d="M32 35 Q15 35 15 52 Q15 68 32 70"/>
+          <circle cx="50" cy="24" r="2.5" fill="#6B1D1D"/>
+          <path d="M45 40 Q50 42 55 40" stroke="#6B1D1D" stroke-width="1.5"/>
+        </svg>
+
+        <h3 class="parents-header-title reveal-on-scroll">WITH THE BLESSINGS OF OUR BELOVED PARENTS</h3>
+
+        <!-- Bride's Parents -->
+        <div class="family-card reveal-on-scroll">
+          <div class="parents-names">Smt. Usha Rani <span class="amp-spacing">&amp;</span> Sri. Karunakaran</div>
+          <div class="family-place">Rasipuram</div>
+        </div>
+
+        <!-- Small Lotus Divider -->
+        <div class="gold-divider-lotus reveal-on-scroll" style="margin: 14px auto; max-width: 220px;">
+          <div class="gold-hairline-tapered"></div>
+          <div class="ornate-lotus-wrap" style="width: 32px; height: 24px;">
+            <svg class="lotus-ornate-svg" style="width: 28px; height: 22px;" viewBox="0 0 48 36" fill="none">
+              <path d="M24 2 C25 10, 29 18, 36 22 C30 26, 26 28, 24 34 C22 28, 18 26, 12 22 C19 18, 23 10, 24 2 Z" fill="#6B1D1D"/>
+              <path d="M24 10 C27 16, 33 21, 42 22 C35 28, 29 30, 24 34 C19 30, 13 28, 6 22 C15 21, 21 16, 24 10 Z" fill="#C6923A" opacity="0.9"/>
+              <circle cx="24" cy="32" r="2.5" fill="#C6923A"/>
+            </svg>
+          </div>
+          <div class="gold-hairline-tapered right"></div>
+        </div>
+
+        <!-- Groom's Parents -->
+        <div class="family-card reveal-on-scroll">
+          <div class="parents-names">Smt. Sathyalakshmi <span class="amp-spacing">&amp;</span> Sri. Prasanna Venkatesan</div>
+          <div class="family-place">Marandahalli</div>
+        </div>
+
+        <!-- Formal Invitation Wording -->
+        <p class="formal-invite-text reveal-on-scroll">
+          "With the blessings of the Divine and the love of our families, we joyfully invite you to witness the sacred union of our beloved daughter and son"
+        </p>
+
+        <div class="formal-script-names reveal-on-scroll">
+          Srinithi <span class="amp-spacing">&amp;</span> Vishu Karthick
+        </div>
+
+        <!-- Soft Seamless Floral Flourish -->
+        <div class="reveal-on-scroll" style="margin-top: 32px; display: flex; justify-content: center; opacity: 0.75;">
+          <svg width="40" height="28" viewBox="0 0 48 36" fill="none">
+            <path d="M24 2 C25 10, 29 18, 36 22 C30 26, 26 28, 24 34 C22 28, 18 26, 12 22 C19 18, 23 10, 24 2 Z" fill="#C6923A"/>
+            <path d="M24 10 C27 16, 33 21, 42 22 C35 28, 29 30, 24 34 C19 30, 13 28, 6 22 C15 21, 21 16, 24 10 Z" fill="#6B1D1D" opacity="0.6"/>
+            <circle cx="24" cy="32" r="2" fill="#C6923A"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: Main Wedding Ceremony & Mandapam
+         ====================================================================== -->
+    <section class="ceremony-section" id="ceremonySection">
+      <div class="ceremony-mandapam-bg" style="background-image: url('/images/beach-mandapam.jpg');"></div>
+
+      <div class="ceremony-content">
+        <!-- Small Ganesha SVG -->
+        <svg class="ganesha-motif reveal-on-scroll" style="width: 44px; height: 44px;" viewBox="0 0 100 100" fill="none" stroke="#6B1D1D" stroke-width="2.2">
+          <path d="M50 15 Q52 10 50 5 Q48 10 50 15 Z" fill="#6B1D1D"/>
+          <path d="M35 25 Q50 18 65 25 Q75 35 68 50 Q60 65 52 75 Q48 82 40 80 Q35 78 37 70 Q42 62 48 58 Q55 54 52 42 Q50 32 35 32"/>
+          <path d="M68 35 Q85 35 85 52 Q85 68 68 70"/>
+          <path d="M32 35 Q15 35 15 52 Q15 68 32 70"/>
+          <circle cx="50" cy="24" r="2" fill="#C6923A"/>
+        </svg>
+
+        <h2 class="ceremony-title reveal-on-scroll">Shubha Muhurtham</h2>
+
+        <div class="ceremony-datetime-pill reveal-on-scroll">
+          Sunday · 13 December 2026 &nbsp;|&nbsp; 7:00 AM – 8:18 AM
+        </div>
+
+        <div class="gold-divider-lotus reveal-on-scroll" style="margin: 0 auto 20px;">
+          <div class="gold-hairline"></div>
+          <svg class="lotus-icon-maroon" viewBox="0 0 24 24">
+            <path d="M12 4C12.5 6 13.8 7.5 15.5 8.7C16.8 9.5 18.5 10 20 10C19 11.5 17.2 12.8 15.5 13.5C16.2 15 16.8 17 16.8 18.5C15 18 13.2 17 12 15.5C10.8 17 9 18 7.2 18.5C7.2 17 7.8 15 8.5 13.5C6.8 12.8 5 11.5 4 10C5.5 10 7.2 9.5 8.5 8.7C10.2 7.5 11.5 6 12 4Z"/>
+          </svg>
+          <div class="gold-hairline"></div>
+        </div>
+
+        <div class="ceremony-venue-block reveal-on-scroll">
+          <div class="venue-name-highlight">Poovayammal Thirumana Mandapam</div>
+          <div class="venue-address-line">F56R+MX3, New Bus Stand Rd, V.Nagar</div>
+          <div class="venue-address-line">Rasipuram, Tamil Nadu 637408</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: Celebrations Timeline
+         ====================================================================== -->
+    <section class="timeline-section" id="timelineSection">
+      <div class="timeline-header">
+        <span class="timeline-pre-title reveal-on-scroll">Auspicious Occasions</span>
+        <h2 class="timeline-script-title reveal-on-scroll">Our Wedding Celebrations</h2>
+        <span class="timeline-uppercase-subtitle reveal-on-scroll">SCHEDULE OF SACRED RITES</span>
+      </div>
+
+      <!-- DAY ONE -->
+      <div style="text-align: center;">
+        <div class="day-badge-pill reveal-on-scroll">
+          <span>Day One · Saturday, 12 December 2026</span>
+        </div>
+      </div>
+
+      <div class="timeline-events-stack">
+        <!-- Event 1: Groom's Welcome -->
+        <div class="event-card-row reveal-on-scroll">
+          <div class="event-icon-circle">
+            <!-- Traditional Arch / Gateway SVG -->
+            <svg class="event-icon-svg" viewBox="0 0 40 40" fill="none">
+              <path d="M8 34 L8 18 Q20 8 32 18 L32 34" stroke="#6B1D1D" stroke-width="2.5" fill="none"/>
+              <path d="M14 34 L14 20 Q20 14 26 20 L26 34" stroke="#C6923A" stroke-width="1.8" fill="none"/>
+              <circle cx="20" cy="11" r="2.5" fill="#E8822A"/>
+            </svg>
+          </div>
+          <div class="event-meta-info">
+            <h4 class="event-name">Groom's Welcome</h4>
+            <span class="event-time-badge">8:40 AM</span>
+            <p class="event-description">A grand traditional welcome honoring the groom, his family, and loved ones.</p>
+          </div>
+        </div>
+
+        <!-- Event 2: Engagement Ceremony -->
+        <div class="event-card-row reveal-on-scroll">
+          <div class="event-icon-circle">
+            <!-- Sacred Rings / Floral Thali SVG -->
+            <svg class="event-icon-svg" viewBox="0 0 40 40" fill="none">
+              <circle cx="16" cy="20" r="9" stroke="#C6923A" stroke-width="2.5"/>
+              <circle cx="24" cy="20" r="9" stroke="#6B1D1D" stroke-width="2.5"/>
+              <path d="M16 11 L14 7 L18 7 Z" fill="#E8822A"/>
+            </svg>
+          </div>
+          <div class="event-meta-info">
+            <h4 class="event-name">Engagement Ceremony</h4>
+            <span class="event-time-badge">11:45 AM – 12:55 PM</span>
+            <p class="event-description">The formal exchange of sacred rings and promises in the presence of family and elders.</p>
+          </div>
+        </div>
+
+        <!-- Event 3: Wedding Reception -->
+        <div class="event-card-row reveal-on-scroll">
+          <div class="event-icon-circle">
+            <!-- Festive Chandelier / Celebration Stars SVG -->
+            <svg class="event-icon-svg" viewBox="0 0 40 40" fill="none">
+              <path d="M20 6 L20 28" stroke="#C6923A" stroke-width="2"/>
+              <path d="M10 18 Q20 28 30 18" stroke="#6B1D1D" stroke-width="2.2" fill="none"/>
+              <circle cx="10" cy="18" r="3" fill="#E8822A"/>
+              <circle cx="20" cy="28" r="3.5" fill="#C6923A"/>
+              <circle cx="30" cy="18" r="3" fill="#E8822A"/>
+              <path d="M20 32 L20 36" stroke="#C6923A" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="event-meta-info">
+            <h4 class="event-name">Wedding Reception</h4>
+            <span class="event-time-badge">6:00 PM Onwards</span>
+            <p class="event-description">An evening of felicitation, joyous celebrations, music, and celebratory dinner.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY TWO -->
+      <div style="text-align: center; margin-top: 16px;">
+        <div class="day-badge-pill reveal-on-scroll">
+          <span>Day Two · Sunday, 13 December 2026</span>
+        </div>
+      </div>
+
+      <div class="timeline-events-stack">
+        <!-- Event 4: Upanayanam -->
+        <div class="event-card-row reveal-on-scroll">
+          <div class="event-icon-circle">
+            <!-- Sacred Thread / Vedic Altar SVG -->
+            <svg class="event-icon-svg" viewBox="0 0 40 40" fill="none">
+              <path d="M12 10 Q28 18 28 32 Q20 36 12 28 Q8 20 12 10 Z" stroke="#C6923A" stroke-width="2" fill="none"/>
+              <path d="M10 32 L30 32" stroke="#6B1D1D" stroke-width="2.5"/>
+              <circle cx="20" cy="16" r="3" fill="#E8822A"/>
+            </svg>
+          </div>
+          <div class="event-meta-info">
+            <h4 class="event-name">Upanayanam</h4>
+            <span class="event-time-badge">4:45 AM – 5:45 AM</span>
+            <p class="event-description">The sacred thread ceremony marking divine spiritual initiation and blessings.</p>
+          </div>
+        </div>
+
+        <!-- Event 5: Shubha Muhurtham -->
+        <div class="event-card-row reveal-on-scroll">
+          <div class="event-icon-circle">
+            <!-- Mangalya Dharanam & Sacred Agni SVG -->
+            <svg class="event-icon-svg" viewBox="0 0 40 40" fill="none">
+              <path d="M8 34 L32 34 L28 28 L12 28 Z" fill="#6B1D1D"/>
+              <!-- Flame -->
+              <path d="M20 10 Q26 20 20 26 Q14 20 20 10 Z" fill="#E8822A"/>
+              <path d="M20 16 Q23 22 20 25 Q17 22 20 16 Z" fill="#FCEAB3"/>
+              <!-- Mangalsutra Motif -->
+              <circle cx="14" cy="12" r="2.5" fill="#C6923A"/>
+              <circle cx="26" cy="12" r="2.5" fill="#C6923A"/>
+            </svg>
+          </div>
+          <div class="event-meta-info">
+            <h4 class="event-name">Shubha Muhurtham</h4>
+            <span class="event-time-badge">7:00 AM – 8:18 AM</span>
+            <p class="event-description">The divine auspicious hour of Mangalya Dharanam and Saptapadi uniting Srinithi & Vishu Karthick in sacred matrimony.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: Venue Spotlight & Interactive Location CTA
+         ====================================================================== -->
+    <section class="venue-section" id="venueSection">
+      <div class="venue-arch-frame reveal-on-scroll">
+        <div class="venue-illustration-wrap">
+          <img src="assets/images/venue.jpg" alt="Poovayammal Thirumana Mandapam" class="venue-image-photo" />
+        </div>
+
+        <!-- Ganesha SVG + Lotus Divider -->
+        <svg class="lotus-icon-maroon" style="width: 22px; height: 22px; margin-bottom: 6px;" viewBox="0 0 24 24">
+          <path d="M12 4C12.5 6 13.8 7.5 15.5 8.7C16.8 9.5 18.5 10 20 10C19 11.5 17.2 12.8 15.5 13.5C16.2 15 16.8 17 16.8 18.5C15 18 13.2 17 12 15.5C10.8 17 9 18 7.2 18.5C7.2 17 7.8 15 8.5 13.5C6.8 12.8 5 11.5 4 10C5.5 10 7.2 9.5 8.5 8.7C10.2 7.5 11.5 6 12 4Z"/>
+        </svg>
+
+        <span class="venue-title-sub">VENUE</span>
+        <h3 class="venue-display-title">Poovayammal Thirumana Mandapam</h3>
+
+        <div class="venue-full-address">
+          F56R+MX3, New Bus Stand Rd, V.Nagar,<br />
+          Rasipuram, Tamil Nadu 637408
+        </div>
+
+        <p class="venue-poetic-desc">
+          Nestled in the serene town of Rasipuram, Poovayammal Thirumana Mandapam stands ready to welcome you with the fragrance of fresh jasmine, the warmth of festive lights, and sacred traditional melodies. We eagerly await your gracious presence to bless our new beginning.
+        </p>
+
+        <!-- Interactive Google Maps CTA Pill Button -->
+        <a href="https://www.google.com/maps/search/?api=1&query=Poovayammal+Thirumana+Mandapam,+F56R%2BMX3,+New+Bus+Stand+Rd,+V.Nagar,+Rasipuram,+Tamil+Nadu+637408" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="maps-cta-pill"
+           onclick="window.open(this.href, '_blank', 'noopener,noreferrer'); return true;">
+          <!-- Left MapPin Icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>CLICK FOR LOCATION</span>
+          <!-- Right Chevron Icon -->
+          <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+
+        <!-- Small Gold Lotus Flourish Centered Beneath Button -->
+        <div style="margin-top: 18px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#C6923A">
+            <path d="M12 4C12.5 6 13.8 7.5 15.5 8.7C16.8 9.5 18.5 10 20 10C19 11.5 17.2 12.8 15.5 13.5C16.2 15 16.8 17 16.8 18.5C15 18 13.2 17 12 15.5C10.8 17 9 18 7.2 18.5C7.2 17 7.8 15 8.5 13.5C6.8 12.8 5 11.5 4 10C5.5 10 7.2 9.5 8.5 8.7C10.2 7.5 11.5 6 12 4Z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: Couple Moments / Candid Story
+         ====================================================================== -->
+    <section class="gallery-section" id="gallerySection">
+      <h3 class="gallery-header-script reveal-on-scroll">A Journey of Two Hearts</h3>
+
+      <!-- Candid Train Moment Card -->
+      <div class="candid-frame-container reveal-on-scroll">
+        <img src="assets/images/candid_train.jpg" alt="Srinithi & Vishu Karthick" class="candid-image" />
+        <div class="candid-caption">
+          "Every journey begins with a heartbeat, every forever with a smile."
+        </div>
+        <div class="candid-signoff">Srinithi <span class="amp-spacing">&amp;</span> Vishu Karthick</div>
+      </div>
+
+      <!-- Formal Couple Portrait in Gilded Double-Border Frame -->
+      <div class="couple-portrait-frame reveal-on-scroll">
+        <img src="assets/images/couple.jpg" alt="Srinithi K & Vishu Karthick P" class="couple-portrait-img" />
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7: Closing Blessings & Medallion
+         ====================================================================== -->
+    <section class="closing-section" id="closingSection">
+      <p class="closing-blessing-text reveal-on-scroll">
+        "Your presence and blessings are our greatest gifts as we embark on this sacred journey together."
+      </p>
+
+      <!-- Royal VS Monogram SVG -->
+      <img src="assets/images/vs_monogram.svg" alt="V & S Royal Monogram" class="closing-monogram reveal-on-scroll" />
+
+      <div class="closing-names reveal-on-scroll">
+        Srinithi <span class="amp-spacing">&amp;</span> Vishu Karthick
+      </div>
+
+      <div class="reveal-on-scroll">
+        <span class="closing-footer-pill">Srinithi & Vishu Karthick · December 2026</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       Floating Background Music Toggle Button
+       ======================================================================== -->
+  <button class="floating-music-btn" id="musicToggleBtn" aria-label="Toggle Wedding Music">
+    <!-- Music Note / Soundwave SVG -->
+    <svg id="musicIconPlaying" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+  </button>
+
+  <!-- ========================================================================
+       JavaScript: Envelope Opening, Audio, Petals, Countdown & Calendar
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const envelopeGate = document.getElementById('envelopeGate');
+      const envelopeFrontWrap = document.getElementById('envelopeFrontWrap');
+      const waxSealBtn = document.getElementById('waxSealBtn');
+      const weddingBgm = document.getElementById('weddingBgm');
+      const musicToggleBtn = document.getElementById('musicToggleBtn');
+      const petalsWrap = document.getElementById('petalsWrap');
+
+      // 1. Petals Generator
+      function spawnPetals() {
+        const petalColors = ['#E8822A', '#D9534F', '#F0AD4E', '#C6923A', '#8B2525'];
+        const totalPetals = 12;
+
+        for (let i = 0; i < totalPetals; i++) {
+          const petal = document.createElement('div');
+          petal.className = 'floating-petal';
+          petal.style.left = Math.random() * 95 + '%';
+          petal.style.animationDuration = (7 + Math.random() * 8) + 's';
+          petal.style.animationDelay = (Math.random() * 6) + 's';
+          
+          const size = 12 + Math.random() * 14;
+          const color = petalColors[Math.floor(Math.random() * petalColors.length)];
+          
+          petal.innerHTML = `
+            <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" opacity="0.35">
+              <path d="M12 2C8 6 4 11 4 15C4 19.4 7.6 22 12 22C16.4 22 20 19.4 20 15C20 11 16 6 12 2Z"/>
+            </svg>
+          `;
+          petalsWrap.appendChild(petal);
+        }
+      }
+      spawnPetals();
+
+      // 2. Envelope Tap & Cinematic Opening Sequence
+      let isOpened = false;
+
+      function openEnvelope() {
+        if (isOpened) return;
+        isOpened = true;
+
+        // Step 1: Trigger cinematic zoom-in & luminous dissolve
+        envelopeGate.classList.add('opening');
+
+        // Step 2: Immediately unlock vertical scrolling
+        document.body.classList.remove('envelope-locked');
+
+        // Step 3: Attempt music autoplay after user gesture
+        if (weddingBgm) {
+          weddingBgm.volume = 0.65;
+          weddingBgm.play().then(() => {
+            musicToggleBtn.classList.add('playing');
+          }).catch(err => {
+            console.log("Audio autoplay prevented by policy:", err);
+          });
+        }
+        musicToggleBtn.classList.add('active');
+
+        // Step 4: Trigger intersection reveals for inner invitation
+        observeScrollElements();
+
+        // Step 5: Completely remove splash overlay after transition
+        setTimeout(() => {
+          envelopeGate.style.display = 'none';
+        }, 860);
+      }
+
+      // Expose globally so inline onclick/ontouchend always succeeds
+      window.openEnvelope = openEnvelope;
+
+      function bindOpen(el) {
+        if (!el) return;
+        ['click', 'touchend', 'pointerdown'].forEach(evt => {
+          el.addEventListener(evt, (e) => {
+            if (evt === 'pointerdown' && e.pointerType === 'mouse' && e.button !== 0) return;
+            openEnvelope();
+          }, { passive: true });
+        });
+      }
+
+      bindOpen(waxSealBtn);
+      bindOpen(envelopeFrontWrap);
+      bindOpen(envelopeGate);
+
+      // 3. Floating Music Toggle Button
+      musicToggleBtn.addEventListener('click', () => {
+        if (weddingBgm.paused) {
+          weddingBgm.play();
+          musicToggleBtn.classList.add('playing');
+        } else {
+          weddingBgm.pause();
+          musicToggleBtn.classList.remove('playing');
+        }
+      });
+
+      // 4. Scroll Reveal via IntersectionObserver
+      function observeScrollElements() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: "0px 0px -40px 0px"
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      }
+
+      // 5. Live Countdown Timer (Sunday, 13 Dec 2026, 07:00:00 IST)
+      // IST is UTC + 5:30 -> ISO: 2026-12-13T07:00:00+05:30
+      const targetWeddingDate = new Date('2026-12-13T07:00:00+05:30').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetWeddingDate - now;
+
+        if (distance <= 0) {
+          document.getElementById('cdDays').textContent = '00';
+          document.getElementById('cdHours').textContent = '00';
+          document.getElementById('cdMins').textContent = '00';
+          document.getElementById('cdSecs').textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('cdDays').textContent = String(days).padStart(2, '0');
+        document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cdMins').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('cdSecs').textContent = String(seconds).padStart(2, '0');
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // 6. Add to Calendar (.ics generation)
+      const addToCalBtn = document.getElementById('addToCalBtn');
+      addToCalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const icsContent = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Srinithi & Vishu Karthick Wedding Invitation//EN',
+          'CALSCALE:GREGORIAN',
+          'METHOD:PUBLISH',
+          'BEGIN:VEVENT',
+          'UID:wedding-reception-sri-vishu-2026@rasipuram',
+          'DTSTAMP:20261119T120000Z',
+          'DTSTART:20261212T123000Z',
+          'DTEND:20261212T163000Z',
+          'SUMMARY:Srinithi & Vishu Karthick – Wedding Reception',
+          'DESCRIPTION:Wedding Reception of Srinithi K & Vishu Karthick P at Poovayammal Thirumana Mandapam, Rasipuram.',
+          'LOCATION:Poovayammal Thirumana Mandapam, F56R+MX3, New Bus Stand Rd, V.Nagar, Rasipuram, Tamil Nadu 637408',
+          'STATUS:CONFIRMED',
+          'END:VEVENT',
+          'BEGIN:VEVENT',
+          'UID:wedding-muhurtham-sri-vishu-2026@rasipuram',
+          'DTSTAMP:20261119T120000Z',
+          'DTSTART:20261213T013000Z',
+          'DTEND:20261213T024800Z',
+          'SUMMARY:Srinithi & Vishu Karthick – Shubha Muhurtham',
+          'DESCRIPTION:Auspicious wedding ceremony (Mangalya Dharanam & Saptapadi) uniting Srinithi K & Vishu Karthick P.',
+          'LOCATION:Poovayammal Thirumana Mandapam, F56R+MX3, New Bus Stand Rd, V.Nagar, Rasipuram, Tamil Nadu 637408',
+          'STATUS:CONFIRMED',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\r\n');
+
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.setAttribute('download', 'Srinithi_Vishu_Wedding_Invitation.ics');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
+  </script>
+</body>
+</html>

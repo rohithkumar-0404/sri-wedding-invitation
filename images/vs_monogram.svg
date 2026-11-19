@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Luxury Metallic Gold Gradients -->
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CA9E52" />
+      <stop offset="22%" stop-color="#F7E6B5" />
+      <stop offset="45%" stop-color="#C59B4E" />
+      <stop offset="68%" stop-color="#8E6928" />
+      <stop offset="85%" stop-color="#EED799" />
+      <stop offset="100%" stop-color="#A5792F" />
+    </linearGradient>
+    
+    <linearGradient id="goldLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A67B2E" />
+      <stop offset="35%" stop-color="#FBE9BD" />
+      <stop offset="65%" stop-color="#D1A757" />
+      <stop offset="100%" stop-color="#825C19" />
+    </linearGradient>
+
+    <radialGradient id="sealBackground" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#FDF8EE" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#F2E3C6" stop-opacity="0.85"/>
+    </radialGradient>
+
+    <!-- Subtle Emboss and Glow Filters -->
+    <filter id="royalShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#5A0F1B" flood-opacity="0.18" />
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#8B6914" flood-opacity="0.25" />
+    </filter>
+
+    <filter id="goldGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Medallion -->
+  <g filter="url(#royalShadow)">
+    <!-- Outer Delicate Beaded Ring -->
+    <circle cx="250" cy="250" r="230" fill="none" stroke="url(#goldSheen)" stroke-width="1.5" stroke-dasharray="3, 4" opacity="0.85" />
+    <!-- Fine Outer Ring -->
+    <circle cx="250" cy="250" r="222" fill="none" stroke="url(#goldSheen)" stroke-width="1.2" opacity="0.9" />
+    <!-- Inner Solid Background Disk -->
+    <circle cx="250" cy="250" r="214" fill="url(#sealBackground)" stroke="url(#goldLight)" stroke-width="2" />
+    <!-- Inner Fine Ring -->
+    <circle cx="250" cy="250" r="198" fill="none" stroke="url(#goldSheen)" stroke-width="1" stroke-dasharray="8, 3" opacity="0.75" />
+  </g>
+
+  <!-- Botanical Laurel Wreath Frame -->
+  <g stroke="url(#goldSheen)" fill="url(#goldLight)" stroke-width="0.8" opacity="0.92">
+    <!-- Left Botanical Leaves -->
+    <path d="M 250,56 C 210,65 170,85 140,118 C 112,148 95,190 92,234 C 89,280 106,325 135,360 C 165,395 205,420 250,432" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Left Leaf Pairs -->
+    <path d="M 225,62 C 210,50 195,52 195,52 C 195,52 205,68 222,66 Z" />
+    <path d="M 180,85 C 162,75 148,82 148,82 C 148,82 160,98 178,92 Z" />
+    <path d="M 142,120 C 124,112 112,122 112,122 C 112,122 126,136 142,128 Z" />
+    <path d="M 115,165 C 96,160 88,172 88,172 C 88,172 102,184 118,174 Z" />
+    <path d="M 100,215 C 80,214 75,228 75,228 C 75,228 90,238 104,225 Z" />
+    <path d="M 100,270 C 82,274 78,290 78,290 C 78,290 94,296 106,280 Z" />
+    <path d="M 116,322 C 100,330 100,346 100,346 C 100,346 116,348 124,332 Z" />
+    <path d="M 145,368 C 132,380 135,396 135,396 C 135,396 150,394 154,376 Z" />
+    <path d="M 185,404 C 174,418 180,434 180,434 C 180,434 195,428 195,410 Z" />
+    <path d="M 230,426 C 224,442 234,454 234,454 C 234,454 246,444 242,428 Z" />
+
+    <!-- Right Botanical Leaves -->
+    <path d="M 250,56 C 290,65 330,85 360,118 C 388,148 405,190 408,234 C 411,280 394,325 365,360 C 335,395 295,420 250,432" fill="none" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Right Leaf Pairs -->
+    <path d="M 275,62 C 290,50 305,52 305,52 C 305,52 295,68 278,66 Z" />
+    <path d="M 320,85 C 338,75 352,82 352,82 C 352,82 340,98 322,92 Z" />
+    <path d="M 358,120 C 376,112 388,122 388,122 C 388,122 374,136 358,128 Z" />
+    <path d="M 385,165 C 404,160 412,172 412,172 C 412,172 398,184 382,174 Z" />
+    <path d="M 400,215 C 420,214 425,228 425,228 C 425,228 410,238 396,225 Z" />
+    <path d="M 400,270 C 418,274 422,290 422,290 C 422,290 406,296 394,280 Z" />
+    <path d="M 384,322 C 400,330 400,346 400,346 C 400,346 384,348 376,332 Z" />
+    <path d="M 355,368 C 368,380 365,396 365,396 C 365,396 350,394 346,376 Z" />
+    <path d="M 315,404 C 326,418 320,434 320,434 C 320,434 305,428 305,410 Z" />
+    <path d="M 270,426 C 276,442 266,454 266,454 C 266,454 254,444 258,428 Z" />
+
+    <!-- Top & Bottom Crown Flourishes -->
+    <!-- Top Crown -->
+    <path d="M 250,44 L 253,53 L 262,54 L 255,60 L 257,69 L 250,64 L 243,69 L 245,60 L 238,54 L 247,53 Z" fill="url(#goldSheen)"/>
+    <!-- Bottom Ribbon Tie -->
+    <path d="M 242,430 C 235,445 220,455 210,460 C 228,454 245,442 250,435 C 255,442 272,454 290,460 C 280,455 265,445 258,430 Z" fill="url(#goldSheen)"/>
+  </g>
+
+  <!-- Central Interlocking Monogram: V & S -->
+  <g filter="url(#goldGlow)">
+    <!-- THE LETTER 'V' (Left-leaning Royal Antiqua Serif) -->
+    <!-- Heavy Stem, Graceful Hairline, Delicate Bracketed Serifs -->
+    <path d="
+      M 160,172 
+      C 160,165 168,162 182,162 
+      L 204,162 
+      C 204,167 197,171 190,173 
+      C 185,175 184,180 186,188 
+      L 225,305 
+      L 245,305 
+      L 294,188 
+      C 297,180 295,175 289,173 
+      C 282,171 276,167 276,162 
+      L 316,162 
+      L 316,172 
+      C 304,172 296,176 292,185 
+      L 242,328 
+      L 226,328 
+      L 174,185 
+      C 168,177 160,173 160,172 Z"
+      fill="url(#goldSheen)" stroke="#8A631F" stroke-width="0.75" />
+
+    <!-- THE LETTER 'S' (Interlaced Royal Spencerian Script) -->
+    <!-- Loops over V's right arm and behind V's left stem -->
+    <path d="
+      M 312,205
+      C 310,188 296,176 274,176
+      C 255,176 242,186 242,200
+      C 242,213 252,223 270,232
+      C 295,244 316,260 316,283
+      C 316,311 292,328 262,328
+      C 240,328 222,320 216,306
+      C 218,306 222,306 226,305
+      C 230,314 243,320 258,320
+      C 280,320 296,306 296,286
+      C 296,270 284,258 264,248
+      C 240,236 224,222 224,202
+      C 224,180 244,166 270,166
+      C 286,166 304,172 312,185
+      C 314,188 316,198 316,204 Z"
+      fill="url(#goldLight)" stroke="#8A631F" stroke-width="0.75" />
+
+    <!-- Center Intersecting Flourish Accent & Micro-Star -->
+    <path d="M 250,238 L 253,245 L 260,246 L 255,251 L 256,258 L 250,254 L 244,258 L 245,251 L 240,246 L 247,245 Z" fill="url(#goldSheen)" opacity="0.95"/>
+  </g>
+
+  <!-- Subtle Inner Ring Highlight -->
+  <circle cx="250" cy="250" r="150" fill="none" stroke="url(#goldSheen)" stroke-width="0.6" stroke-dasharray="2, 6" opacity="0.6" />
+</svg>

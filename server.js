@@ -32,7 +32,23 @@ const server = http.createServer((req, res) => {
   }
 
   const safePath = path.normalize(parsedUrl).replace(/^(\.\.[\/\\])+/, '');
-  const filePath = path.join(PUBLIC_DIR, safePath);
+  let filePath = path.join(PUBLIC_DIR, safePath);
+
+  // Fallback checks for /images, /public/images, and /assets/images
+  if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+    const candidatePaths = [
+      path.join(PUBLIC_DIR, 'public', safePath),
+      path.join(PUBLIC_DIR, 'assets', safePath),
+      path.join(PUBLIC_DIR, 'images', path.basename(safePath)),
+      path.join(PUBLIC_DIR, 'assets', 'images', path.basename(safePath))
+    ];
+    for (const cand of candidatePaths) {
+      if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+        filePath = cand;
+        break;
+      }
+    }
+  }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
@@ -76,7 +92,8 @@ const server = http.createServer((req, res) => {
         'Content-Length': totalSize,
         'Content-Type': contentType,
         'Accept-Ranges': 'bytes',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
       });
 
       fs.createReadStream(filePath).pipe(res);
