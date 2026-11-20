@@ -23,9 +23,9 @@ export const ClosingSection: React.FC = () => {
         className="flex justify-center mb-5"
       >
         <img 
-          src="/assets/images/vs_monogram.svg" 
-          alt="V & S Royal Monogram" 
-          className="w-28 h-28 block drop-shadow-md" 
+          src="/images/vs_medallion.png?v=2" 
+          alt="V & S Royal Temple Medallion" 
+          className="w-36 h-36 block drop-shadow-[0_8px_20px_rgba(107,29,29,0.25)]" 
         />
       </motion.div>
 
