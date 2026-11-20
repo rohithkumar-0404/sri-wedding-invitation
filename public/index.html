@@ -1625,7 +1625,7 @@
 <body class="envelope-locked">
 
   <!-- Background Music Audio Tag -->
-  <audio id="weddingBgm" loop preload="auto" playsinline>
+  <audio id="weddingBgm" src="/assets/audio/wedding_music.mp3" loop preload="auto" playsinline webkit-playsinline>
     <source src="/assets/audio/wedding_music.mp3" type="audio/mpeg" />
     <source src="/audio/wedding_music.mp3" type="audio/mpeg" />
   </audio>
@@ -1636,7 +1636,7 @@
   <!-- ========================================================================
        SECTION 0: Interactive Envelope Splash Screen (Full Artwork Front-Page)
        ======================================================================== -->
-  <div class="envelope-gate-overlay" id="envelopeGate" onclick="openEnvelope()" ontouchend="openEnvelope()">
+  <div class="envelope-gate-overlay" id="envelopeGate" onclick="openEnvelope(event)">
     <div class="envelope-front-wrap" id="envelopeFrontWrap">
       <!-- Full-bleed Edge-to-Edge Artwork Front Page -->
       <img 
@@ -1652,8 +1652,7 @@
         id="waxSealBtn" 
         aria-label="Tap the seal to open invitation"
         type="button"
-        onclick="event.stopPropagation(); openEnvelope();"
-        ontouchend="event.stopPropagation(); openEnvelope();"
+        onclick="openEnvelope(event)"
       ></button>
     </div>
   </div>
@@ -2270,8 +2269,35 @@
 
       // 2. Envelope Tap & Cinematic Opening Sequence
       let isOpened = false;
+      let musicStarted = false;
 
-      function openEnvelope() {
+      function startMusic() {
+        if (!weddingBgm) return;
+        try {
+          weddingBgm.volume = 0.65;
+          const playPromise = weddingBgm.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => {
+              musicStarted = true;
+              musicToggleBtn.classList.add('playing');
+              musicToggleBtn.classList.add('active');
+            }).catch(err => {
+              console.log("Audio autoplay prevented by policy:", err);
+            });
+          }
+        } catch (err) {
+          console.warn("startMusic error:", err);
+        }
+      }
+
+      function openEnvelope(e) {
+        if (e && e.stopPropagation) {
+          try { e.stopPropagation(); } catch (_) {}
+        }
+
+        // Always trigger audio playback on user gesture
+        startMusic();
+
         if (isOpened) return;
         isOpened = true;
 
@@ -2281,35 +2307,23 @@
         // Step 2: Immediately unlock vertical scrolling
         document.body.classList.remove('envelope-locked');
 
-        // Step 3: Attempt music autoplay after user gesture
-        if (weddingBgm) {
-          weddingBgm.volume = 0.65;
-          weddingBgm.play().then(() => {
-            musicToggleBtn.classList.add('playing');
-          }).catch(err => {
-            console.log("Audio autoplay prevented by policy:", err);
-          });
-        }
-        musicToggleBtn.classList.add('active');
-
-        // Step 4: Trigger intersection reveals for inner invitation
+        // Step 3: Trigger intersection reveals for inner invitation
         observeScrollElements();
 
-        // Step 5: Completely remove splash overlay after transition
+        // Step 4: Completely remove splash overlay after transition
         setTimeout(() => {
           envelopeGate.style.display = 'none';
         }, 860);
       }
 
-      // Expose globally so inline onclick/ontouchend always succeeds
+      // Expose globally so inline onclick always succeeds
       window.openEnvelope = openEnvelope;
 
       function bindOpen(el) {
         if (!el) return;
-        ['click', 'touchend', 'pointerdown'].forEach(evt => {
+        ['click', 'touchend'].forEach(evt => {
           el.addEventListener(evt, (e) => {
-            if (evt === 'pointerdown' && e.pointerType === 'mouse' && e.button !== 0) return;
-            openEnvelope();
+            openEnvelope(e);
           }, { passive: true });
         });
       }
@@ -2317,6 +2331,19 @@
       bindOpen(waxSealBtn);
       bindOpen(envelopeFrontWrap);
       bindOpen(envelopeGate);
+
+      // Global safety net: if audio was ever delayed or gated, start on first page tap
+      function unlockAudioOnFirstInteraction() {
+        if (!musicStarted && weddingBgm && weddingBgm.paused) {
+          startMusic();
+        }
+        ['click', 'touchstart', 'touchend'].forEach(evt => {
+          window.removeEventListener(evt, unlockAudioOnFirstInteraction);
+        });
+      }
+      ['click', 'touchstart', 'touchend'].forEach(evt => {
+        window.addEventListener(evt, unlockAudioOnFirstInteraction, { passive: true });
+      });
 
       // 3. Floating Music Toggle Button
       musicToggleBtn.addEventListener('click', () => {
