@@ -41,7 +41,7 @@ export const CeremonySection: React.FC = () => {
           </svg>
         </div>
 
-        <span className="font-['Cinzel'] text-[11.5px] font-bold tracking-[0.24em] text-[#C6923A] uppercase block mb-1">
+        <span className="font-['Cinzel'] text-[11.5px] font-bold tracking-[0.24em] text-[#C6923A] uppercase block mb-1 text-center w-full">
           Sacred Auspicious Ceremony
         </span>
 
@@ -49,12 +49,12 @@ export const CeremonySection: React.FC = () => {
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-['Great_Vibes'] text-[56px] text-[#6B1D1D] my-1 leading-tight drop-shadow-[0_2px_8px_rgba(107,29,29,0.15)]"
+          className="font-['Great_Vibes'] text-[56px] text-[#6B1D1D] my-1 leading-tight drop-shadow-[0_2px_8px_rgba(107,29,29,0.15)] text-center w-full"
         >
           Shubha Muhurtham
         </motion.h2>
 
-        <div className="font-['Cinzel'] text-[11px] font-bold tracking-[0.16em] uppercase text-[#3D1C12]/90 mb-5">
+        <div className="font-['Cinzel'] text-[11px] font-bold tracking-[0.16em] uppercase text-[#3D1C12]/90 mb-5 text-center w-full max-w-[360px] mx-auto leading-relaxed">
           Dhanur Lagnam · Sacred Kanyadaanam &amp; Saptapadi
         </div>
 
